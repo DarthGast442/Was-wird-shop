@@ -1,1 +1,36 @@
-<title></title>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Server Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Server funktioniert!</h1>
+    <p>Du hast <span id="count">0</span> Mal geklickt.</p>
+    <button id="clickBtn">Klick mich!</button>
+
+    <script>
+        const btn = document.getElementById('clickBtn');
+        const countSpan = document.getElementById('count');
+        let count = 0;
+
+        btn.addEventListener('click', () => {
+            count++;
+            countSpan.textContent = count;
+        });
+    </script>
+</body>
+</html>
