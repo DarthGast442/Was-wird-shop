@@ -1,4 +1,7 @@
-Date;User;Change;Filename;Note;
-24.09.2025;Christian;create;main.html;Erstellung einer main.html
-24.09.2025;Christian;create;main.css;Erstellung einer main.css
-24.09.2025;Christian;create;main.java;Erstellung einer main.java
+Date,User,Change,Filename,Note
+24.09.2025,Christian,create,main.html,Created main.html
+24.09.2025,Christian,create,main.css,Created main.css
+24.09.2025,Christian,create,main.java,Created main.java
+25.09.2025,Christian,create,.gitignore,Created .gitignore
+25.09.2025,Christian,create,extensions.txt,Created extensions.txt
+25.09.2025,Christian,create,properties.env,Created properties.env
