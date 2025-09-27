@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was-wird-shop</title>
+    <link rel="stylesheet" type="text/css" href="../static/main.css" />
+    <!--Calling method generateProductView from products_main.java-->
+
+</head>
+
+<body>
+    <!--navigation Bar at the top of the page - same for every page-->
+    <div class="nav_bar">
+        <div>Sidebar</div>
+        <div>Liefern nach Land</div>
+        <div>Sprache</div>
+        <div>Logo</div>
+        <div class="search_bar">
+            <form action="main.html">
+                <input type="search" alt="searchbar" id="search" name="search" placeholder="durchsuchen..."
+                    class="search_input">
+                <button type="submit" class="search_button">
+                    <img src="../../../res/nav_bar/menu.png" alt="Button-Bild" class="submit_img">
+                </button>
+            </form>
+        </div>
+        <div>?</div>
+        <div>?</div>
+        <div><a href="{{ url_for('cart') }}">Warenkorb</a></div>
+        <div>Profil</div>
+    </div>
+    <!--space for the display of products-->
+    <div class="products" id="products">
+        <script>
+            fetch("/produkte")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("products").innerHTML = html;
+                })
+                .catch(err => console.error("Fehler beim Laden der Produkte:", err));
+        </script>
+    </div>
+
+    <!--Bottom Bar at the end of every page - same for every page-->
+    <div class="bottom_bar">
+
+    </div>
+</body>
+
+</html>

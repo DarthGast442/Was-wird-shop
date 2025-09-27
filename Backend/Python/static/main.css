@@ -1,0 +1,83 @@
+* {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav_bar {
+    background-color: coral;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav_bar > div {
+    margin: 1%;
+    height: 100px;
+    background-color: blue;
+    line-height: 100px;
+    text-align: center;
+    flex-basis: 6%;
+    }
+
+/*Searchbar*/    
+
+.search_input:hover {
+    border: 3px solid grey;
+}
+
+.search_input:active {
+    border: 2px solid black;
+}
+ 
+.search_button:hover {
+  box-shadow: 0 3px #505050;
+  transform: translateY(-2px);
+}
+
+.search_button:active {
+  box-shadow: 0 3px #505050;
+  transform: translateY(2px);
+}
+ 
+.search_bar {
+  flex: 1 1 70%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;       
+}
+
+.search_bar form {
+  display: flex;             
+  align-items: center;       
+}
+
+.search_input {
+  flex: 1;               
+  height: 46px;           
+  font-size: 25px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.search_button {
+  display: flex;          
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  width: 50px;           
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: coral;
+}
+
+.submit_img {
+  height: 70px;           
+  width: 70px;
+}
+
+/*Product View*/
+
