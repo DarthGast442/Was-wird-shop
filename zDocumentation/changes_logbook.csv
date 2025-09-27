@@ -5,3 +5,5 @@ Date,User,Change,Filename,Note
 25.09.2025,Christian,create,.gitignore,Created .gitignore
 25.09.2025,Christian,create,extensions.txt,Created extensions.txt
 25.09.2025,Christian,create,properties.env,Created properties.env
+27.09.2025,Christian,create,shop.py,Created shop.py
+27.09.2025,Christian,create,main.html,Updated main.html: designed searchbar

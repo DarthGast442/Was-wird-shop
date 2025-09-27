@@ -1,6 +1,6 @@
 # this file contains the VSCode extensions used in this project
 
 DotENV          Support for .env file synatx
-Live Server     Launch a local server for html/css view in your browser
 Excel Viewer    .CSV docs can be viewed as Excel-sheet in VSCode
 Rainbow CSV     .CSV docs can displayed in different colours
+Python          For running python smoothly
