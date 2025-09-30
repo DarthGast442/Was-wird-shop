@@ -1,9 +1,11 @@
-Date,User,Change,Filename,Note
-24.09.2025,Christian,create,main.html,Created main.html
-24.09.2025,Christian,create,main.css,Created main.css
-24.09.2025,Christian,create,main.java,Created main.java
-25.09.2025,Christian,create,.gitignore,Created .gitignore
-25.09.2025,Christian,create,extensions.txt,Created extensions.txt
-25.09.2025,Christian,create,properties.env,Created properties.env
-27.09.2025,Christian,create,shop.py,Created shop.py
-27.09.2025,Christian,create,main.html,Updated main.html: designed searchbar
+Date,User,Change,Filename,Note,ntt
+24.09.2025,Christian,create,main.html,Created main.html,no
+24.09.2025,Christian,create,main.css,Created main.css,no
+24.09.2025,Christian,create,main.java,Created main.java,no
+25.09.2025,Christian,create,.gitignore,Created .gitignore,no
+25.09.2025,Christian,create,extensions.txt,Created extensions.txt,no
+25.09.2025,Christian,create,properties.env,Created properties.env,no
+27.09.2025,Christian,create,shop.py,Created shop.py,no
+27.09.2025,Christian,update,main.html,Updated main.html: designed searchbar,no
+30.09.2025,Christian,create,CREATE TABLE - 09_25.txt,Created CREATE TABLE - 09_25.txt,no
+30.09.2025,Christian,update,README.md,added DB-User documentation,no

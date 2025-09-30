@@ -31,6 +31,18 @@
         <div><a href="{{ url_for('cart') }}">Warenkorb</a></div>
         <div>Profil</div>
     </div>
+    <!--second navigation Bar with links to dofferent categories-->
+    <div class="category_bar">
+        <script>
+            fetch("/categoryBar")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("products").innerHTML = html;
+                })
+                .catch(err => console.error("Fehler beim Laden der vorgeschlagenen Kategorien:", err));
+        </script>
+    </div>
+
     <!--space for the display of products-->
     <div class="products" id="products">
         <script>
@@ -45,7 +57,14 @@
 
     <!--Bottom Bar at the end of every page - same for every page-->
     <div class="bottom_bar">
-        
+        <script>
+            fetch("/bottomBar")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("products").innerHTML = html;
+                })
+                .catch(err => console.error("Fehler beim Laden der vorgeschlagenen Kategorien:", err));
+        </script>
     </div>
 </body>
 

@@ -1,0 +1,42 @@
+CREATE TABLE Companys (
+	id int identity(1,1) PRIMARY KEY,
+	companyName nvarChar(50) NOT NULL,
+	companyCountry nvarChar(50) default('Deutschland'),
+	companyAddress nvarChar(100) NOT NULL,
+	discount int default (0)
+	);
+
+CREATE TABLE Categorys (
+	id int identity(1,1) PRIMARY KEY,
+	categoryName nvarChar(50) NOT NULL
+	);
+
+CREATE TABLE Products (
+	id int identity(1,1) PRIMARY KEY,
+	productName nvarChar(100) NOT NULL,
+	companyID int NOT NULL FOREIGN KEY REFERENCES Companys(id),
+	categoryID int NOT NULL FOREIGN KEY REFERENCES Categorys(id),
+	discount int default(0)
+	);
+
+CREATE TABLE Customers (
+	id uniqueidentifier PRIMARY KEY DEFAULT(newID()),
+	customerName nvarChar(50) NOT NULL,
+	customerCountry nvarChar(50) NOT NULL DEFAULT('Deutschland'),
+	customerAddress nvarChar(100) NOT NULL,
+	customerDate date NOT NULL CHECK (customerDate <= DATEADD(YEAR, -18, GETDATE()))
+	);
+
+CREATE TABLE Orders (
+	id uniqueidentifier PRIMARY KEY DEFAULT(newid()),
+	customerID uniqueidentifier NOT NULL FOREIGN KEY REFERENCES Customers(id),
+	orderDate date NOT NULL default(getDate()),
+	currentStatus nvarChar(20) default('in basket') CHECK (currentStatus IN ('in basket', 'ordered', 'payment received', 'packed', 'shipped'))
+	);
+
+CREATE TABLE ProductOrder (
+	id int identity(1,1) PRIMARY KEY,
+	productID int NOT NULL FOREIGN KEY REFERENCES Products(id),
+	orderID uniqueidentifier NOT NULL FOREIGN KEY REFERENCES Orders(id),
+	quantaty int NOT NULL
+	);
