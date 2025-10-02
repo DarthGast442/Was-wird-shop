@@ -32,12 +32,12 @@
         <div>Profil</div>
     </div>
     <!--second navigation Bar with links to dofferent categories-->
-    <div class="category_bar">
+    <div class="category_bar" id="category_bar">
         <script>
-            fetch("/categoryBar")
+            fetch("/category_bar")
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById("products").innerHTML = html;
+                    document.getElementById("category_bar").innerHTML = html;
                 })
                 .catch(err => console.error("Fehler beim Laden der vorgeschlagenen Kategorien:", err));
         </script>
@@ -46,7 +46,7 @@
     <!--space for the display of products-->
     <div class="products" id="products">
         <script>
-            fetch("/produkte")
+            fetch("/products")
                 .then(response => response.text())
                 .then(html => {
                     document.getElementById("products").innerHTML = html;
@@ -56,12 +56,12 @@
     </div>
 
     <!--Bottom Bar at the end of every page - same for every page-->
-    <div class="bottom_bar">
+    <div class="bottom_bar" id="bottom_bar">
         <script>
             fetch("/bottomBar")
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById("products").innerHTML = html;
+                    document.getElementById("bottom_bar").innerHTML = html;
                 })
                 .catch(err => console.error("Fehler beim Laden der vorgeschlagenen Kategorien:", err));
         </script>

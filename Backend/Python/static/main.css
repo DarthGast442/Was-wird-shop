@@ -79,6 +79,23 @@
   width: 70px;
 }
 
+/*category bar*/
+
+.category_bar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #505050;  
+}
+
+.category_bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.entry:hover a {
+  color: lightgray;
+}
+
 /*Product View*/
 
 .gallery-container {
