@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
 
@@ -34,46 +34,30 @@ def products():
 <title>Slideshow Galerie</title>
 
 <div class="gallery-container">
-  <div class="gallery-slider" id="slider">
+  <div class="gallery-slider">
 
     """
-    for p in produkte:
-        html += f"""
-    <div class="gallery-item">
-      <img src="{p}.jpg" alt="Bild {p}">
-      <div class="caption">Überschrift {p}</div>
-    </div>
-    """
+    for i in range(0, len(produkte), 4): # 4 products per slide
+      html += '<div class="slide-group">\n'
+      for p in produkte[i:i+4]: # get the next 4 products
+          html += f"""
+          <div class="gallery-item">
+            <!-- <img src="{p}.jpg" alt="Bild {p}"> -->
+            <img src="{ url_for('static', filename='res/placeholder.png') }" alt="Placeholder für Produkt {p}">
+            <div class="caption">Überschrift {p}</div>
+          </div>
+          """
+      html += '</div>\n'
     
     html += """
   </div>
-  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-
-<script>
-let slideIndex = [1,1];
-let slideId = ["mySlides1", "mySlides2"]
-showSlides(1, 0);
-showSlides(1, 1);
-
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
-
-function showSlides(n, no) {
-  let i;
-  let x = document.getElementsByClassName(slideId[no]);
-  if (n > x.length) {slideIndex[no] = 1}    
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex[no]-1].style.display = "block";  
-}
-</script>
     """
-    
+# &#10094; -> left arrow
+# &#10095; -> right arrow
+
     return html  # Returns raw HTML
 
 @app.route("/bottomBar")
