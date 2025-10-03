@@ -1,3 +1,9 @@
+/*Settings to disable the white border displayed in the browser*/
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 * {
   font-size: medium;
   font-family: Arial, Helvetica, sans-serif;
@@ -77,6 +83,11 @@
 .submit_img {
   height: 70px;
   width: 70px;
+}
+
+.menu_img {
+  width: 100px;
+  height: auto;
 }
 
 /*category bar*/

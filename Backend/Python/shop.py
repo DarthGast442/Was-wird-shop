@@ -12,6 +12,21 @@ def cart():
     category = request.args.get("category") # looks for the parameter "categorys"
     return render_template("cart.html")
 
+# Function to generate the category bar at the top of the page
+@app.route("/category_bar")
+def category_bar():
+    # temporary - future: will be filled dynamically out of the DB
+    categorys = ["category A", "category B", "category C", "category D", "category E", "category F", "category G", "category H", "category I", "category J", "category K", "category L"]
+    # generating html-code
+    html = ""
+    for c in categorys:
+        link = f"/cart?category={c}" # creating a link to reach the page for the category-overview
+        html += f"""
+          <div class="entry"><a href="{link}">{c}</div> 
+        """
+    # returning generated code
+    return html
+
 @app.route("/products")
 def products():
     produkte = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
@@ -60,21 +75,6 @@ function showSlides(n, no) {
     """
     
     return html  # Returns raw HTML
-
-# Function to generate the category bar at the top of the page
-@app.route("/category_bar")
-def category_bar():
-    # temporary - future: will be filled dynamically out of the DB
-    categorys = ["category A", "category B", "category C", "category D", "category E", "category F", "category G", "category H", "category I", "category J", "category K", "category L"]
-    # generating html-code
-    html = ""
-    for c in categorys:
-        link = f"/cart?category={c}" # creating a link to reach the page for the category-overview
-        html += f"""
-          <div class="entry"><a href="{link}">{c}</div> 
-        """
-    # returning generated code
-    return html
 
 @app.route("/bottomBar")
 def bottom_bar():

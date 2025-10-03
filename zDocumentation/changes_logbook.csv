@@ -9,5 +9,5 @@ Date,User,Change,Filename,Note,ntt
 27.09.2025,Christian,update,main.html,Updated main.html: designed searchbar,no
 30.09.2025,Christian,create,CREATE TABLE - 09_25.txt,Created CREATE TABLE - 09_25.txt,no
 30.09.2025,Christian,update,README.md,added DB-User documentation,no
-02.10.2025,Christian,update,shop.py,Updated function /cart: Implemented use of parameters in links,yes
-02.10.2025,Christian,update,shop.py,Updated function /category_bar: created the category bar with template categorys
+02.10.2025,Christian,update,shop.py,Updated function /cart: Implemented use of parameters in links,no
+02.10.2025,Christian,update,shop.py,Updated function /category_bar: created the category bar with template categorys,no

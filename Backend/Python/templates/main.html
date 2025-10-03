@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Was-wird-shop</title>
     <link rel="stylesheet" type="text/css" href="../static/main.css" />
-    <!--Calling method generateProductView from products_main.java-->
-
 </head>
 
 <body>
     <!--navigation Bar at the top of the page - same for every page-->
     <div class="nav_bar">
-        <div>Sidebar</div>
+        <div><img src="{{ url_for('static', filename='res/nav_bar/sidebar.png') }}" alt="Sidebar" class="menu_img" style="width: 90%;"></div>
         <div>Liefern nach Land</div>
         <div>Sprache</div>
         <div>Logo</div>
@@ -28,8 +26,8 @@
         </div>
         <div>?</div>
         <div>?</div>
-        <div><a href="{{ url_for('cart') }}">Warenkorb</a></div>
-        <div>Profil</div>
+        <div><a href="{{ url_for('cart') }}"><img src="{{ url_for('static', filename='res/nav_bar/cart.png') }}" alt="Warenkorb" class="menu_img"></a></div>
+        <div><img src="{{ url_for('static', filename='res/nav_bar/profile.png') }}" alt="Profil" class="menu_img"></div>
     </div>
     <!--second navigation Bar with links to dofferent categories-->
     <div class="category_bar" id="category_bar">
