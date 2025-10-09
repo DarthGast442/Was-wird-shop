@@ -44,14 +44,43 @@
     <!--space for the display of products-->
     <div class="products" id="products">
         <script>
-            fetch("/products")
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById("products").innerHTML = html;
-                })
-                .catch(err => console.error("Fehler beim Laden der Produkte:", err));
+        fetch("/products")
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("products").innerHTML = html;
+
+                // Jetzt sind die Bilder im DOM – also zeige das erste
+                const slides = document.getElementsByClassName("mySlides");
+                if (slides.length > 0) {
+                    slides[0].style.display = "block";
+                }
+            })
+            .catch(err => console.error("Fehler beim Laden der Produkte:", err));
         </script>
     </div>
+<!-- JavaScript for slideshow (Products function)-->
+    <script>
+        let slideIndex = 0;
+
+        function showSlides(n) {
+        const slides = document.getElementsByClassName("slide-group");
+        if (n >= slides.length) { slideIndex = 0; }
+        if (n < 0) { slideIndex = slides.length - 1; }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "flex";
+        }
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+        showSlides(slideIndex);
+        });
+    </script>
 
     <!--Bottom Bar at the end of every page - same for every page-->
     <div class="bottom_bar" id="bottom_bar">
